@@ -83,3 +83,47 @@ int main(){
     cout<< a+b << endl;
     cout<< a*b << endl;
 }
+```
+# WARMUP3
+```C++=
+#include <iostream>
+using namespace std;
+
+const int R =5;
+const int C =4;
+
+class Bitmap{
+private:
+    static const int bamp[10][R];
+    string snum;
+    int scale;
+public:
+    Bitmap(string sno ="", int s =1 ) : snum(sno), scale(s) {}
+    
+    void setsnum(string sno) {snum = sno; }
+    void setscale(int s) {scale = s; }
+}
+
+int main(){
+    int s;
+    string sno;
+    Bitmap foo;
+    
+    while(1) {
+        cout <<"> ";
+        cin >> sno;
+        foo.setsnum(sno);
+        
+        for(s = 1; s < 4; ++s) {
+            cout <<foo * s << endl;
+        }
+        cout << endl;
+    }
+    return 0;
+}
+
+const int Bitmap::bamp[10][R] = {
+    {15,9,9,9,15 } , {2,6,2,2,7 } , {15,1,15,8,15} ,
+    {15,1,7,1,15 } , {9,9,15,1,1} , {15,8,15,1,15} ,
+    {15,8,15,9,15} , {15,1,2,4,8} , {15,9,15,9,15} ,
+    {15,9,15,1,15} };
